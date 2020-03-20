@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vRYsp7msEuSqh3mgJUo+jSP/Qg2wSTCjG+FW5Hk4nf35Z+u0PIeCr2nPke2cN1yEy18/ubsnXjz0BWJdl5IVSQ==",
+  "success": true,
+  "projectFilePath": "/Users/April/revature_projects/p1/p1-April13/PizzaBox.Domain/PizzaBox.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/April/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/April/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

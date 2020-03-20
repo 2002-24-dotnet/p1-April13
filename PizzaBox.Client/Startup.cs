@@ -27,15 +27,21 @@ namespace PizzaBox.Client
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllersWithViews();
+
       services.AddDbContext<PizzaBoxDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("main")));
-      services.AddSingleton<PizzaBoxRepository>(); // lifetime of the application for all requests
+      
+      services.AddScoped<PizzaBoxRepository>();
+      //services.AddSingleton<PizzaBoxRepository>(); // lifetime of the application for all requests
+      
       //services.AddScoped<IRepository, PizzaBoxRepository>(); // lifetime of 1 request for all method calls
       //services.AddTransient<IRepository, PizzaBoxRepository>(); // lifetime of 1 method call within 1 request
+      
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PizzaBoxDbContext context)
     {
+            
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -52,6 +58,14 @@ namespace PizzaBox.Client
       app.UseRouting();
 
       app.UseAuthorization();
+
+      // Ways to Migrate
+      //, PizzaBoxDbContext context
+      //context.Database.Migrate();
+
+      // using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+      // using (var context = scope.ServiceProvider.GetService<PizzaBoxDbContext>())
+      //  context.Database.Migrate();
 
       app.UseEndpoints(endpoints =>
       {

@@ -1,0 +1,12 @@
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/bin/Debug/netstandard2.0/PizzaBox.Storage.deps.json
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/bin/Debug/netstandard2.0/PizzaBox.Storage.dll
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/bin/Debug/netstandard2.0/PizzaBox.Storage.pdb
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/bin/Debug/netstandard2.0/PizzaBox.Domain.dll
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/bin/Debug/netstandard2.0/PizzaBox.Domain.pdb
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.csprojAssemblyReference.cache
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.csproj.CoreCompileInputs.cache
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.AssemblyInfoInputs.cache
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.AssemblyInfo.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.csproj.CopyComplete
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.dll
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Storage/obj/Debug/netstandard2.0/PizzaBox.Storage.pdb

@@ -1,7 +1,14 @@
+using System;
+using System.Collections.Generic;
+using PizzaBox.Domain.Abstracts;
+
 namespace PizzaBox.Domain.Models
 {
-  public class Size
+  public class Size : APizzaComponent
   {
-    public string Name { get; set; }
+    public Size()
+    {
+      Id = this.GetHashCode();
+    }
   }
 }
