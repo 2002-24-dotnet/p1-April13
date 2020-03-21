@@ -3,15 +3,19 @@
 <form action="/account/login" method="post">
   @Html.AntiForgeryToken()
 
-  <label asp-for="@Model.Username">username</label>
-  <input type="text" asp-for="@Model.Username" />
-  @Html.ValidationMessageFor(avm => avm.Username)
+  <label asp-for="@Model.Email">Email</label>
+  <input type="text" asp-for="@Model.Email" />
+  @Html.ValidationMessageFor(avm => avm.Email)
 
   <label asp-for="@Model.Password">password</label>
   <input type="password" asp-for="@Model.Password" />
   @Html.ValidationMessageFor(avm => avm.Password)
 
-  @Html.RadioButtonFor(avm => avm.User, true)
+  @Html.RadioButtonFor(avm => avm.IsUser, true, new { id = "user" })
+  @Html.Label("user", "Customer")
+
+  @Html.RadioButtonFor(avm => avm.IsUser, false, new { id = "store" })
+  @Html.Label("store", "Store")
 
   <button type="reset">Clear</button>
   <button type="submit">Login</button>

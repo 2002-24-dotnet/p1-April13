@@ -9,18 +9,18 @@ namespace PizzaBox.Domain.Models
   {
     public long Id { get; set; }
     public string Name { get; set; }
-    public decimal Price
-    {
-      get
-      {
-        if (Crust == null || Size == null || PizzaToppings == null)
-        {
-          return 0;
-        }
+    public decimal Price { get; set; }
+    // {
+    //   get
+    //   {
+    //     if (Crust == null || Size == null || PizzaToppings == null)
+    //     {
+    //       return 0;
+    //     }
 
-        return Crust.Price + Size.Price + PizzaToppings.Sum(pt => pt.Topping.Price);
-      }
-    }
+    //     return Crust.Price + Size.Price + PizzaToppings.Sum(pt => pt.Topping.Price);
+    //   }
+    // }
 
     #region NAVIGATIONAL PROPERTIES
 

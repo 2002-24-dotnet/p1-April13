@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PizzaBox.Storage;
 using PizzaBox.Storage.Repositories;
+using Microsoft.AspNetCore.Http;
 
 namespace PizzaBox.Client
 {
@@ -41,7 +42,14 @@ namespace PizzaBox.Client
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PizzaBoxDbContext context)
     {
-            
+      // Ways to Migrate
+      //, PizzaBoxDbContext context
+      //context.Database.Migrate();
+
+      // using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+      // using (var context = scope.ServiceProvider.GetService<PizzaBoxDbContext>())
+      //  context.Database.Migrate();      
+      
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -58,14 +66,6 @@ namespace PizzaBox.Client
       app.UseRouting();
 
       app.UseAuthorization();
-
-      // Ways to Migrate
-      //, PizzaBoxDbContext context
-      //context.Database.Migrate();
-
-      // using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-      // using (var context = scope.ServiceProvider.GetService<PizzaBoxDbContext>())
-      //  context.Database.Migrate();
 
       app.UseEndpoints(endpoints =>
       {
