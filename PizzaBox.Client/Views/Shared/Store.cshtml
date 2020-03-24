@@ -1,4 +1,18 @@
-<h1>Store</h1>
+@model PizzaBox.Domain.Models.Store
 
-<a href="/store/history">order history</a>
+<h1>Welcome, @Model.Name</h1>
+
+@* <form action="/user/history" method="get">
+  @Html.HiddenFor(u => u.UserId)
+
+  <button type="submit">order history</button>
+</form> *@
+
+
+
+@* <a href="/user/history" value=@Model>order history</a> *@
+@Html.ActionLink("Revenue", "Revenue", new { id = @Model.Id })
+
+@Html.ActionLink("Order History", "StoreHistory", new { id = @Model.Id })
+
 <a href="/account/logout">logout</a>

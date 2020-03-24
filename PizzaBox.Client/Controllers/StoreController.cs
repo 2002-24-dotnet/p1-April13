@@ -33,7 +33,7 @@ namespace PizzaBox.Client.Controllers
           if (account.Email.Equals(s.Email, StringComparison.OrdinalIgnoreCase) && account.Password.Equals(s.Password))
             {
               CurrentStore = s;
-              return View("Store", s);
+              return StoreHome(s.Id);
             }
           else
             return View(account);
@@ -42,11 +42,51 @@ namespace PizzaBox.Client.Controllers
       return View(account);
     }
     
-    
-    [HttpGet]
-    public IActionResult History()
+    [HttpGet, ActionName("StoreHome")]
+    public IActionResult StoreHome(long id)
     {
-      return View("Store");
+      if (id == 0L)
+      {
+        return View("StoreLogin");
+      }
+      return View("Store", _pbr.GetFromId<Store>(id));
+    }
+
+
+    [HttpGet, ActionName("StoreHistory")]
+    public IActionResult StoreHistory(long id)
+    {
+      if (id == 0L)
+      {
+        return View("UserLogin");
+      }
+      Store loadStore = _pbr.GetFromId<Store>(id);
+      loadStore.Orders = _pbr.Read<Order>().Where(o => o.Store.Id.Equals(id)).ToList();
+
+      return View("StoreHistory", new StoreHistoryViewModel(_pbr, loadStore));
+    }
+
+    // Get Reciept from Order Number
+    [HttpGet, ActionName("RecieptCopy")]
+    public IActionResult RecieptCopy(long store, long order)
+    {
+      if (order == 0L || store == 0L)
+        return View("UserLogin");
+      
+      Order loadOrder = _pbr.GetFromId<Order>(order);
+      loadOrder.Store = _pbr.GetFromId<Store>(store);
+      loadOrder.Pizzas = _pbr.Read<Pizza>().Where(p => p.Order.Id.Equals(order)).ToList();
+      
+      User user = new User();
+      foreach(var u in _pbr.Read<User>().ToList())
+      {
+        if (_pbr.Read<Order>().Where(or => or.User.Id.Equals(order)) != null)
+          user = u;
+      }
+      loadOrder.User =  user;
+      //_pbr.Read<Order>().Single(or => or.Id.Equals(order)).Store;
+      
+      return View("RecieptCopy",loadOrder);
     }
   }
 }

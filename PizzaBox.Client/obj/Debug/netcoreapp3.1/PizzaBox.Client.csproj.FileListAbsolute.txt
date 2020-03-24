@@ -73,7 +73,6 @@
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.pdb
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.genruntimeconfig.cache
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/History.cshtml.g.cs
-/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Reciept.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Locations.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/Registered.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/SignUp.cshtml.g.cs
@@ -82,3 +81,6 @@
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Order.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Confirmation.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Create.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Store/RecieptCopy.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Store/StoreHistory.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Reciept.cshtml.g.cs

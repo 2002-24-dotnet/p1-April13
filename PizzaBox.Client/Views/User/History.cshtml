@@ -9,7 +9,7 @@
     {
       <li>
         <b>Order #@order.Id (@order.date.ToString())</b> <br/>
-        @order.Store.Name: @order.Pizzas.Count() Pizzas <br/> 
+        Ordered: @order.Pizzas.Count() Pizzas from @order.Store.Name <br/> 
         Total: $@order.Price
         @Html.ActionLink("Details", "Reciept", new { user=@Model.CurrentUser.Id, order = order.Id })
       </li>     
