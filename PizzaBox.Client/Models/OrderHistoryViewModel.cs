@@ -27,7 +27,7 @@ namespace PizzaBox.Client.Models
           Store store = new Store();
           foreach(Store s in _pbr.Read<Store>().ToList())
           {
-            if (_pbr.Read<Order>().Where(or => or.Store.Id.Equals(s.Id)) != null)
+            if (_pbr.Read<Order>().Where(or => or.Store.Id.Equals(s.Id) && or.Id.Equals(o.Id)).Any())
               store = s;
           }
           //Store s = _pbr.Read<Store>().Single(s => s.Orders.SingleOrDefault(or =>or.Id.Equals(o.Id)).Equals(o.Id));

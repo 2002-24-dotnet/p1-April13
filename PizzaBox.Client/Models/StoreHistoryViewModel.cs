@@ -30,7 +30,7 @@ namespace PizzaBox.Client.Models
           User user = new User();
           foreach(User u in _pbr.Read<User>().ToList())
           {
-            if (_pbr.Read<Order>().Where(or => or.User.Id.Equals(u.Id)) != null)
+            if (_pbr.Read<Order>().Where(or => or.User.Id.Equals(u.Id) && or.Id.Equals(o.Id)).Any())
               user = u;
           }
           //Store s = _pbr.Read<Store>().Single(s => s.Orders.SingleOrDefault(or =>or.Id.Equals(o.Id)).Equals(o.Id));

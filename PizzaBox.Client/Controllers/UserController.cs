@@ -86,7 +86,7 @@ namespace PizzaBox.Client.Controllers
       Store store = new Store();
       foreach(var s in _pbr.Read<Store>().ToList())
       {
-        if (_pbr.Read<Order>().Where(or => or.Store.Id.Equals(order)) != null)
+        if (_pbr.Read<Order>().Where(or => or.Store.Id.Equals(s.Id) && or.Id.Equals(order)).Any())
           store = s;
       }
       loadOrder.Store =  store;
