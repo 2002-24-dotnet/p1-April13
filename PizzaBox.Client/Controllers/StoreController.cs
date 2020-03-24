@@ -78,7 +78,7 @@ namespace PizzaBox.Client.Controllers
       User user = new User();
       foreach(var u in _pbr.Read<User>().ToList())
       {
-        if (_pbr.Read<Order>().Where(or => or.User.Id.Equals(order) && or.Id.Equals(order)).Any())
+        if (_pbr.Read<Order>().Where(or => or.User.Id.Equals(u.Id) && or.Id.Equals(order)).Any())
           user = u;
       }
       loadOrder.User =  user;
