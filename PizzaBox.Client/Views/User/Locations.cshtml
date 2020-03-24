@@ -1,0 +1,33 @@
+@model PizzaBox.Client.Models.LocationsViewModel
+
+<h1>Select Store</h1>
+
+@if(@Model.StoreList != null)
+{
+  <form action="/user/startorder" method="post">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(lvm => lvm.UserId)
+
+    @* <select asp-for="@Model.StoreId">
+      @foreach (var store in @Model.StoreList)
+      {
+        <option value="@store.Id" id="@store.Id">@store.Name (@store.Address)</option>
+      }
+    </select> *@
+
+      @foreach (var store in @Model.StoreList)
+      {
+        @Html.RadioButtonFor(lvm => lvm.StoreId, store.Id, new { id = store.Id.ToString() })
+        @Html.Label(store.Id.ToString(), store.Name + " (" + store.Address + ")")
+        <br />
+      }
+    
+    <button type="submit">Start Order</button>
+  </form>
+}
+else
+{
+  <p>No Stores</p>
+}
+@Html.ActionLink("Back", "UserHome", new { id = @Model.UserId })
+<a href="/account/logout">logout</a>

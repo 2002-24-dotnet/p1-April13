@@ -1,0 +1,25 @@
+@model PizzaBox.Client.Models.OrderHistoryViewModel
+
+<h1>Order History for @Model.CurrentUser.Name</h1>
+
+@if (@Model.UserOrders != null)
+{
+  <ul>
+    @foreach (var order in @Model.UserOrders)
+    {
+      <li>
+        <b>Order #@order.Id (@order.date.ToString())</b> <br/>
+        @order.Store.Name: @order.Pizzas.Count() Pizzas <br/> 
+        Total: $@order.Price
+        @Html.ActionLink("Details", "Reciept", new { user=@Model.CurrentUser.Id, order = order.Id })
+      </li>     
+    }
+  </ul>
+}
+else
+{
+  <p>No Orders</p>
+}
+
+@Html.ActionLink("Back", "UserHome", new { id = @Model.CurrentUser.Id })
+<a href="/account/logout">logout</a>

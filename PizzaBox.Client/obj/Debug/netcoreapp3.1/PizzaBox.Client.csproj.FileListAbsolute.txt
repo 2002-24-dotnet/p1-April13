@@ -53,11 +53,9 @@
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.TagHelpers.input.cache
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.TagHelpers.output.cache
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.RazorCoreGenerate.cache
-/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/Login.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/Logout.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
-/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Pizza/Create.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Store.cshtml.g.cs
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Shared/User.cshtml.g.cs
@@ -74,3 +72,13 @@
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.dll
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.pdb
 /Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/PizzaBox.Client.genruntimeconfig.cache
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/History.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Reciept.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Locations.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/Registered.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Account/SignUp.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Store/StoreLogin.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/UserLogin.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Order.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Confirmation.cshtml.g.cs
+/Users/April/revature_projects/p1/p1-April13/PizzaBox.Client/obj/Debug/netcoreapp3.1/Razor/Views/User/Create.cshtml.g.cs

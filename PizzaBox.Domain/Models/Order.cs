@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using PizzaBox.Domain.Interfaces;
 
 namespace PizzaBox.Domain.Models
 {
-  public class Order
+  public class Order : IEntity
   {
-    public long OrderId { get; set; }
-
+    public long Id { get; set; }
+    
     #region NAVIGATIONAL PROPERTIES
     public List<Pizza> Pizzas { get; set; }
     public User User { get; set; }
@@ -27,15 +28,20 @@ namespace PizzaBox.Domain.Models
           price += p.Price;
         }
         return price;
-        
       }
     }
-    public DateTime date;
+
+    public DateTime date { get; set; }
+
+    public Order(Store s, User u)
+    {
+      Store = s;
+      User = u;
+    }
 
     public Order()
     {
-      // OrderId = DateTime.Now.Ticks;
-      date = DateTime.Now;
+      
     }
   }
 }

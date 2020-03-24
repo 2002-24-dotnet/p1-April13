@@ -36,7 +36,7 @@ namespace PizzaBox.Storage
       builder.Entity<Topping>().HasKey(t => t.Id);
       builder.Entity<User>().HasKey(u => u.Id);
       builder.Entity<Store>().HasKey(st => st.Id);
-      builder.Entity<Order>().HasKey(o => o.OrderId);
+      builder.Entity<Order>().HasKey(o => o.Id);
 
       builder.Entity<Crust>().HasMany(c => c.Pizzas).WithOne(p => p.Crust);
       builder.Entity<Size>().HasMany(s => s.Pizzas).WithOne(p => p.Size);

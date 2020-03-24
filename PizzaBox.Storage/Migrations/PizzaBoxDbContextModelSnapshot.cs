@@ -59,7 +59,7 @@ namespace PizzaBox.Storage.Migrations
 
             modelBuilder.Entity("PizzaBox.Domain.Models.Order", b =>
                 {
-                    b.Property<long>("OrderId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -70,7 +70,10 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long?>("UserId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("OrderId");
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("StoreId");
 
@@ -94,6 +97,9 @@ namespace PizzaBox.Storage.Migrations
 
                     b.Property<long?>("OrderId")
                         .HasColumnType("bigint");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<long?>("SizeId")
                         .HasColumnType("bigint");
@@ -203,7 +209,7 @@ namespace PizzaBox.Storage.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637203057556763920L,
+                            Id = 637205880633030810L,
                             Address = "456 Main St, Arlington, TX 76543",
                             Email = "Store1@mail.com",
                             Name = "Store1",
@@ -212,7 +218,7 @@ namespace PizzaBox.Storage.Migrations
                         },
                         new
                         {
-                            Id = 637203057556763960L,
+                            Id = 637205880633030850L,
                             Address = "789 Main St, Arlington, TX 76543",
                             Email = "Store2@mail.com",
                             Name = "Store2",
@@ -330,7 +336,7 @@ namespace PizzaBox.Storage.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637203057556414210L,
+                            Id = 637205880632715580L,
                             Address = "123 Main St, Arlington, TX 76543",
                             Email = "Person1@mail.com",
                             Name = "Person1",
@@ -339,7 +345,7 @@ namespace PizzaBox.Storage.Migrations
                         },
                         new
                         {
-                            Id = 637203057556762810L,
+                            Id = 637205880633029520L,
                             Address = "321 Main St, Arlington, TX 76543",
                             Email = "Person2@mail.com",
                             Name = "Person2",

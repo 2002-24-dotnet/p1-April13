@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PizzaBox.Storage.Migrations
 {
@@ -86,14 +87,15 @@ namespace PizzaBox.Storage.Migrations
                 name: "Order",
                 columns: table => new
                 {
-                    OrderId = table.Column<long>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(nullable: true),
-                    StoreId = table.Column<long>(nullable: true)
+                    StoreId = table.Column<long>(nullable: true),
+                    date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.OrderId);
+                    table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Order_Store_StoreId",
                         column: x => x.StoreId,
@@ -115,6 +117,7 @@ namespace PizzaBox.Storage.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
                     CrustId = table.Column<long>(nullable: true),
                     SizeId = table.Column<long>(nullable: true),
                     OrderId = table.Column<long>(nullable: true),
@@ -133,7 +136,7 @@ namespace PizzaBox.Storage.Migrations
                         name: "FK_Pizza_Order_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Order",
-                        principalColumn: "OrderId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Pizza_Size_SizeId",
@@ -200,8 +203,8 @@ namespace PizzaBox.Storage.Migrations
                 columns: new[] { "Id", "Address", "Email", "Name", "Password", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 637203057556763920L, "456 Main St, Arlington, TX 76543", "Store1@mail.com", "Store1", "Password123", "817-123-4567" },
-                    { 637203057556763960L, "789 Main St, Arlington, TX 76543", "Store2@mail.com", "Store2", "Password123", "817-654-3210" }
+                    { 637205880633030810L, "456 Main St, Arlington, TX 76543", "Store1@mail.com", "Store1", "Password123", "817-123-4567" },
+                    { 637205880633030850L, "789 Main St, Arlington, TX 76543", "Store2@mail.com", "Store2", "Password123", "817-654-3210" }
                 });
 
             migrationBuilder.InsertData(
@@ -226,8 +229,8 @@ namespace PizzaBox.Storage.Migrations
                 columns: new[] { "Id", "Address", "Email", "Name", "Password", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 637203057556414210L, "123 Main St, Arlington, TX 76543", "Person1@mail.com", "Person1", "Password123", "972-123-4567" },
-                    { 637203057556762810L, "321 Main St, Arlington, TX 76543", "Person2@mail.com", "Person2", "Password123", "972-321-4567" }
+                    { 637205880632715580L, "123 Main St, Arlington, TX 76543", "Person1@mail.com", "Person1", "Password123", "972-123-4567" },
+                    { 637205880633029520L, "321 Main St, Arlington, TX 76543", "Person2@mail.com", "Person2", "Password123", "972-321-4567" }
                 });
 
             migrationBuilder.CreateIndex(

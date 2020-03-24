@@ -1,0 +1,34 @@
+@model PizzaBox.Client.Models.OrderViewModel
+
+<h1>Ordering from @Model.Order.Store.Name</h1>
+
+@if (@Model.Order.Pizzas != null)
+{
+  @if(@Model.Order.Pizzas.Any())
+  {
+    @foreach (var p in @Model.Order.Pizzas)
+    {
+        <p>@p.Name  $@p.Price @Html.ActionLink("Remove", "Remove", new { user=@Model.UserId, store=@Model.StoreId, order=@Model.OrderId, pizza=@p.Id })</p>
+    }
+
+    <p>Total: $@Model.Order.Price</p>
+
+    @Html.ActionLink("Place Order", "Order", new { user=@Model.UserId, store=@Model.StoreId, order=@Model.OrderId })
+  } 
+  else
+  {
+    <p>No Pizzas in Cart.</p>
+  }
+}
+else
+{
+  <p>No Pizzas in Cart.</p>
+}
+@* @foreach (var p in @Model.Pizzas)
+{
+    <option value="@p.Name"></option>
+} *@
+
+
+@Html.ActionLink("Add Pizza", "AddPizza", new { user=@Model.UserId, store=@Model.StoreId, order=@Model.OrderId } )
+@Html.ActionLink("Cancel Order", "Delete", new { user=@Model.UserId, store=@Model.StoreId, order=@Model.OrderId } )

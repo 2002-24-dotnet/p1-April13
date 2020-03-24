@@ -28,49 +28,61 @@ namespace PizzaBox.Client.Controllers
     }
 
     [HttpGet]
-    public IActionResult Login()
+    public IActionResult SignUp()
     {
       return View();
     }
 
     [HttpPost]
-    public IActionResult Login(AccountViewModel account)
+    public IActionResult SignUp(AccountViewModel account)
     {
+      
       if (ModelState.IsValid)
       {
+        // check if user input matches to a record in user/store database
+        // TO-DO: need to verify something exists in the table/database before trying to read from it
+        // TO-DO: message for when when login information is not found
         if (account.IsUser)
         {
+          // check if email has already been used
           foreach (var u in _pbr.Read<User>().ToList())
           {
-            if (account.Email.Equals(u.Email, StringComparison.OrdinalIgnoreCase) && account.Password.Equals(u.Password))
-              return View("User", u);
+            if (account.Email.Equals(u.Email, StringComparison.OrdinalIgnoreCase))
+                return View(account);
             else
-              return View(account);
+            {
+              _pbr.Post<User>(new User(){
+                Name = account.Name,
+                Email = account.Email,
+                Password = account.Password,
+                PhoneNumber = account.PhoneNum,
+                Address = account.Address
+              });
+              return View("Registered");
+            }
           }
         }
         else
         {
-          foreach (var s in _pbr.Read<Store>().ToList()/*StoreRepository.GetAll()*/)
+          // check if email has already been used
+          foreach (var s in _pbr.Read<Store>().ToList())
           {
-            if (account.Email.Equals(s.Email, StringComparison.OrdinalIgnoreCase) && account.Password.Equals(s.Password))
-              return View("Store", s);
-            else
+            if (account.Email.Equals(s.Email, StringComparison.OrdinalIgnoreCase))
               return View(account);
+            else
+            {
+              _pbr.Post<Store>(new Store(){
+                Name = account.Name,
+                Email = account.Email,
+                Password = account.Password,
+                PhoneNumber = account.PhoneNum,
+                Address = account.Address
+              });
+              return View("Registered");
+            }
           }
         }
       }
-
-      // var acct = _pbr.CheckAccount(account.Username, account.Password);
-
-      // if (acct != null)
-      // {
-      //   if (account.User)
-      //   {
-      //     return View("User", acct);
-      //   }
-
-      //   return View("Store", acct);
-      // }
 
       return View(account);
     }

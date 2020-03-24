@@ -12,6 +12,9 @@ using Microsoft.Extensions.Hosting;
 using PizzaBox.Storage;
 using PizzaBox.Storage.Repositories;
 using Microsoft.AspNetCore.Http;
+using PizzaBox.Domain.Models;
+using PizzaBox.Client.Controllers;
+using PizzaBox.Domain.Abstracts;
 
 namespace PizzaBox.Client
 {
@@ -33,10 +36,8 @@ namespace PizzaBox.Client
       
       services.AddScoped<PizzaBoxRepository>();
       //services.AddSingleton<PizzaBoxRepository>(); // lifetime of the application for all requests
-      
       //services.AddScoped<IRepository, PizzaBoxRepository>(); // lifetime of 1 request for all method calls
       //services.AddTransient<IRepository, PizzaBoxRepository>(); // lifetime of 1 method call within 1 request
-      
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

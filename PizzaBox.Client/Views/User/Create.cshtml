@@ -1,0 +1,38 @@
+@model PizzaBox.Client.Models.PizzaViewModel
+
+<h1>Build your Pizza!</h1>
+
+<form action="/user/postpizza" method="post">
+  @Html.AntiForgeryToken()
+  @Html.HiddenFor(pvm => pvm.OrderId)
+  @Html.HiddenFor(pvm => pvm.UserId)
+  @Html.HiddenFor(pvm => pvm.StoreId)
+
+  <b>Crust</b>
+  <select asp-for=@Model.CrustId>
+    @foreach (var item in @Model.CrustList)
+    {
+      <option value=@item.Id>@item.Name</option>
+    }
+  </select>
+  <br/>
+  <b>Size</b>
+  <br/>
+  @foreach (var item in @Model.SizeList)
+  {
+    @Html.RadioButtonFor(pvm => pvm.SizeId, item.Id, new { id = item.Id.ToString() })
+    @Html.Label(item.Id.ToString(), item.Name)
+  }
+  <br/>
+  <b>Toppings</b>
+  <br/>
+  @foreach(var item in @Model.ToppingList)
+  {
+    <input type="checkbox" name="ToppingsId" value=@item.Id id=@item.Id/>
+    <label for=@item.Id>@item.Name</label>
+  }
+<br/>
+  <button type="submit">Add to Cart</button>
+</form>
+
+@Html.ActionLink("Back", "Cart", new { user=@Model.UserId, store=@Model.StoreId, order=@Model.OrderId} )

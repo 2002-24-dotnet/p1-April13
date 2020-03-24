@@ -1,0 +1,22 @@
+@model PizzaBox.Domain.Models.Order
+
+<h1>Order #@Model.Id</h1>
+
+<p>
+  Store: @Model.Store.Name (@Model.Store.Address) <br/>
+  Submitted: @Html.DisplayTextFor(o => o.date)
+</p>
+
+<p>
+  Pizzas Ordered <br/>
+  <ul>
+    @foreach (var p in @Model.Pizzas)
+    {
+      <li>@p.Name $@p.Price</li>
+    }
+  </ul>
+</p>
+<p>Total: $@Model.Price</p>
+
+@Html.ActionLink("Back to Order History", "History", new { id = @Model.User.Id })
+<a href="/account/logout">Logout</a>
