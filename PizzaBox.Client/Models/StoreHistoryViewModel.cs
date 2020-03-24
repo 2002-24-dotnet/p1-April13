@@ -10,8 +10,11 @@ namespace PizzaBox.Client.Models
     private PizzaBoxRepository _pbr;
     public Store CurrentStore { get; set; }
 
+    public decimal Revenue { get; set; }
+
     public StoreHistoryViewModel(PizzaBoxRepository repository, Store s)
     {
+      Revenue = 0;
       _pbr = repository;
       CurrentStore = s;
       StoreOrders = new List<Order>();
@@ -33,6 +36,8 @@ namespace PizzaBox.Client.Models
           //Store s = _pbr.Read<Store>().Single(s => s.Orders.SingleOrDefault(or =>or.Id.Equals(o.Id)).Equals(o.Id));
           order.User = user;
           //_pbr.Read<Store>().Where(o => o.Orders.ToList().Equals(id)).ToList();
+
+          Revenue += order.Price;
 
           StoreOrders.Add(order);
         }

@@ -11,8 +11,7 @@
 
 
 @* <a href="/user/history" value=@Model>order history</a> *@
-@Html.ActionLink("Revenue", "Revenue", new { id = @Model.Id })
 
-@Html.ActionLink("Order History", "StoreHistory", new { id = @Model.Id })
+@Html.ActionLink("Revenue & History", "StoreHistory", new { id = @Model.Id })
 
-<a href="/account/logout">logout</a>
+<a href="/account/logout">Logout</a>

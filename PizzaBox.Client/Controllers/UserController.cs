@@ -42,8 +42,6 @@ namespace PizzaBox.Client.Controllers
             {
               return UserHome(u.Id);
             }
-          else
-            return View(account);
         }
       }
 

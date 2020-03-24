@@ -35,8 +35,6 @@ namespace PizzaBox.Client.Controllers
               CurrentStore = s;
               return StoreHome(s.Id);
             }
-          else
-            return View(account);
         }
       }
       return View(account);
